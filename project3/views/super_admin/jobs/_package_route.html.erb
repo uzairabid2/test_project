@@ -1,0 +1,192 @@
+<div class="portlet box blue">
+  <div class="portlet-title">
+    <div class="caption">
+      <i class="fa fa-gift"></i>Package Route
+    </div>
+    <div class="tools">
+      <a class="collapse" href="javascript:;">
+      </a>
+      <a class="config" data-toggle="modal" href="#portlet-config">
+      </a>
+      <a class="reload" href="javascript:;">
+      </a>
+      <a class="remove" href="javascript:;">
+      </a>
+    </div>
+  </div>
+  <div class="portlet-body form">
+    <!-- BEGIN FORM-->
+    <form role="form" class="form-horizontal">
+      <div class="form-body">
+
+        <h3 class="form-section">Pickup Location</h3>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Package #:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.job_code %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Address:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.pick_up_address %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Contact:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.pick_up_phone %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Pickup Time:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.pick_up_time.strftime("%m/%d/%y,%H:%M %p") %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Size:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.package.name if @job.package %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Comments:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.pick_up_comment %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+        <!--/row-->
+        <h3 class="form-section">Package Destination</h3>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Status:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.get_status %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Comments:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.recipient_comment %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Address:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.destination_address %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Contact:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.recipient_phone %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Delivery Time:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <% if @job.time_value.present? %>
+                      <%= (@job.pick_up_time + @job.time_value.minute).strftime("%m/%d/%y,%H:%M %p") %>
+                  <% else %>
+                      <%= @job.pick_up_time.strftime("%m/%d/%y,%H:%M %p") %>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Recipient:</label>
+
+              <div class="col-md-9">
+                <p class="form-control-static">
+                  <%= @job.recipient_name %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+      </div>
+    </form>
+    <!-- END FORM-->
+  </div>
+</div>

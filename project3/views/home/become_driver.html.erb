@@ -1,0 +1,287 @@
+<section class="z_slider">
+  <div class="slider-wrapper parallax">
+    <ul class="main-slider bxslider">
+      <li class="z-bg"></li>
+      <li class="z-bg2"></li>
+    </ul>
+    <!-- main-slider -->
+    <div class="z-get-started spoz1">
+      <h1>Become a Ziply Driver</h1>
+
+      <div class="z_input_hold_2">
+        <div id="sign_up_errors" style="height: auto"></div>
+        <%= form_for(@user, :as => :user, :url => registration_path(@user), :html => {:id => "d_sign_up_form", :onsubmit => "return false;"}) do |f| %>
+            <% f.object.profile ||= Profile.new %>
+            <%= f.fields_for :profile do |p| %>
+                <%= hidden_field_tag :role, "driver" %>
+                <%= p.hidden_field :phone_type_id, :value => PhoneType.first.id%>
+                <%= p.hidden_field :vehicle_type_id, :value => VehicleType.first.id%>
+                <div class="z_field_block1 m-r-bt">
+                  <!--<input class="z_field_in" type="text" placeholder="Full Name">-->
+                  <%= f.text_field :first_name, :autofocus => true, :class => "z_field_in", :placeholder => "First Name" %>
+                </div>
+                <!--z_field_block-->
+                <!--<div class="z_field_block1 m-r-bt"><input class="z_field_in" type="text" placeholder="Full Name"></div>&lt;!&ndash;z_field_block&ndash;&gt;-->
+                <div class="z_field_block1 m-r-bt">
+                  <%= f.text_field :last_name, :class => "z_field_in", :placeholder => "Last Name" %>
+                </div>
+                <div class="z_field_block1 m-r-bt">
+                  <!--<input class="z_field_in" type="text" placeholder="Phone Number">-->
+                  <%= p.text_field :phone_number, :class => "z_field_in", :placeholder => "Phone Number" %>
+                </div>
+                <!--z_field_block-->
+                <div class="z_field_block1 m-r-bt">
+                  <!--<input class="z_field_in" type="text" placeholder="Email Address">-->
+                  <%= f.text_field :email, :class => "z_field_in", :placeholder => "Email Address" %>
+                </div>
+                <!--z_field_block-->
+                <div class="z_field_loctn m-r-bt">
+                  <div class="z_location">
+                    <div class="z_loctn_drop">
+                      <%= p.subregion_select(:state, "US", options={:include_blank => "Select State"}, :class => "z_citz") %>
+                      <!--<select name="Year" class="z_citz">-->
+                        <!--<option>Locations</option>-->
+                        <!--<option value="2011">Ex. CA</option>-->
+                        <!--<option value="2011">Ex. CA</option>-->
+                        <!--<option value="2011">Ex. CA</option>-->
+                        <!--<option value="2011">Ex. CA</option>-->
+                      <!--</select>-->
+                    </div>
+                    <!--z_crd_exp-->
+                  </div>
+                </div>
+                <!--z_field_time-->
+                <a class="z_orngbig_btn w100" href="javascript:void(0)" id="d_sign_up_btn">Get Started</a><!--z_orngbig_btn-->
+            <% end %>
+        <% end %>
+      </div>
+      <!--z_input_hold-->
+      <div class="z_mem_1"><p>Praesent commodo cursus magna lerisque nisl consectetur et.</div>
+      <!--z_mem-->
+    </div>
+    <!--z-get-started ends-->
+  </div>
+  <!-- slider-wrapper -->
+</section><!--z_slider-->
+<section class="z_driver1">
+  <div class="container941">
+    <div class="drivr_sec">
+      <div class="z_driv_box">
+        <h2>Flexible</h2>
+
+        <p>Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum.</p>
+      </div>
+      <div class="z_driv_box">
+        <h2>Earn up to $25 an Hour</h2>
+
+        <p>Sed posuere consectetur est at a pharetra augue lobortis. Nulla vitae elit libero, a pharetra augue.</p>
+      </div>
+      <div class="z_driv_box">
+        <h2>Fun Community</h2>
+
+        <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero.</p>
+      </div>
+    </div>
+  </div>
+</section><!--z_driver-->
+<section id="z_works_2">
+  <div class="container">
+    <div class="z_w_lft"><img src="/assets/how_it_works.png"></div>
+    <!--z_w_lft-->
+    <div class="z_w_rit_2">
+      <h1>How does Ziply work?</h1>
+
+      <p>Pack box, select destination, pick up, Locate shipment, get delivery time estimates, delivery rght to your
+        door. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a
+        pharetra augue. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum
+        faucibus dolor auctor.</p>
+    </div>
+    <!--z_w_lft-->
+  </div>
+  <!--container ends-->
+</section><!--z_works-->
+<section class="hw_wrk_sec">
+  <div class="hw_wrk">
+    <h2>How to Become a Zipster</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non
+      magna. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis
+      lacus vel augue laoreet uctor.</p>
+  </div>
+</section><!--how_wrk-->
+<section id="z_testimonial_2" class="testi-bg">
+  <div class="container">
+    <div class="z_testi" id="test_container">
+      <div class="testimonial">
+        <div class="z_repet">
+          <div class="z_nme_img">
+            <div class="z_dp_img"><img src="/assets/pic.png"></div>
+            <!--z_dp_img-->
+            <!--<p>1 Glenn Rush</p>
+            <span>Entrepreneur</span>-->
+          </div>
+          <!--z_nme_img-->
+          <div class="z_testi_txt">
+            <img src="/assets/inverted.png">
+
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero.
+              pharetra augue.</p>
+
+            <p>- Glenn Rush, Entrepreneur</p>
+            <img class="f-r" src="/assets/inverted-2.png">
+          </div>
+          <!--z_testi_txt-->
+        </div>
+        <!--z_repet-->
+        <div class="z_repet">
+          <div class="z_nme_img">
+            <div class="z_dp_img"><img src="/assets/tosi.png"></div>
+            <!--z_dp_img-->
+            <!--<p>2 Glenn Rush</p>
+            <span>Entrepreneur</span>-->
+          </div>
+          <!--z_nme_img-->
+          <div class="z_testi_txt">
+            <img src="/assets/inverted.png">
+
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero.
+              pharetra augue.</p>
+
+            <p>- Glenn Rush, Entrepreneur</p>
+            <img class="f-r" src="/assets/inverted-2.png">
+          </div>
+          <!--z_testi_txt-->
+        </div>
+        <!--z_repet-->
+        <div class="z_repet">
+          <div class="z_nme_img">
+            <div class="z_dp_img"><img src="/assets/pic.png"></div>
+            <!--z_dp_img-->
+            <!--<p>3 Glenn Rush</p>
+            <span>Entrepreneur</span>-->
+          </div>
+          <!--z_nme_img-->
+          <div class="z_testi_txt">
+            <img src="/assets/inverted.png">
+
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero.
+              pharetra augue.</p>
+
+            <p>- Glenn Rush, Entrepreneur</p>
+            <img class="f-r" src="/assets/inverted-2.png">
+          </div>
+          <!--z_testi_txt-->
+        </div>
+        <!--z_repet-->
+        <div class="z_repet">
+          <div class="z_nme_img">
+            <div class="z_dp_img"><img src="/assets/tosi.png"></div>
+            <!--z_dp_img-->
+            <!--<p>4 Glenn Rush</p>
+            <span>Entrepreneur</span>-->
+          </div>
+          <!--z_nme_img-->
+          <div class="z_testi_txt">
+            <img src="/assets/inverted.png">
+
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero.
+              pharetra augue.</p>
+
+            <p>- Glenn Rush, Entrepreneur</p>
+            <img class="f-r" src="/assets/inverted-2.png">
+          </div>
+          <!--z_testi_txt-->
+        </div>
+        <!--z_repet-->
+      </div>
+      <!--testimonial-->
+    </div>
+    <!--z_testi-->
+  </div>
+  <!--container ends-->
+</section><!--z_testimonial-->
+
+<script type="text/javascript">
+    $("#d_sign_up_form").validate({
+        rules: {
+            "user[first_name]": {
+                required: true
+            },
+            "user[last_name]": {
+                required: true
+            },
+            "user[email]": {
+                required: true,
+                email: true
+            },
+            "user[profile_attributes][phone_number]": {
+                required: true
+            }
+        },
+        messages: {
+            "user[first_name]": {
+                required: "Please enter your first name"
+            },
+            "user[last_name]": {
+                required: "Please enter your last name"
+            },
+            "user[email]": {
+                required: "Please enter your email",
+                email: "Please enter valid email"
+            },
+            "user[profile_attributes][phone_number]": {
+                required: "Please enter your phone number"
+            }
+        }
+    });
+    $(document).ready(function () {
+        $("#user_profile_attributes_phone_number").mask("999-999-9999");
+
+    });
+
+    $("#d_sign_up_btn").click(function () {
+        if (!$("#d_sign_up_form").valid()) {
+            return false;
+        } else {
+            $("#ajax_loader").show();
+            $(".shadow").show();
+            $("#d_sign_up_form").ajaxSubmit({
+                beforeSubmit: function (a, f, o) {
+                    o.dataType = 'json';
+                },
+                success: function (data) {
+                    $("#ajax_loader").hide();
+                    $(".shadow").hide()
+                    console.log(data.success);
+                    if (data.success == true) {
+                        $('.z_light_box').hide();
+                        $("#ajax_loader").show();
+                        $(".shadow").show();
+                        $.ajax({
+                            url: '/home/driver_success',
+                            type: 'get',
+                            dataType: 'html',
+                            processData: false,
+                            success: function (data) {
+                                $("#pop_up_div").html(data);
+                                $("#ajax_loader").hide();
+                                $(".shadow").hide()
+                            }
+                        });
+                    }
+                    else if (data.success == false) {
+                        $("#sign_up_errors").html(data.html);
+                    }
+                },
+                error: function (data) {
+//                    window.location.reload();
+                }
+            });
+        }
+    });
+</script>

@@ -1,0 +1,85 @@
+
+<section class="z_header">
+  <div class="container wid">
+    <!--<a class="logo" href="index.html"><img alt="Ziply" src="/assets/logo.png"></a>-->
+    <%= link_to image_tag("logo.png"), "/", :class => "logo" %>
+
+    <div class="z_loged">
+      <div class="a_sepr f-l"></div>
+      <!--a_sep-->
+      <div class="z_dp"><%= current_user.profile.blank? ? image_tag("default_image.png") : current_user.profile.asset.blank? ? image_tag("default_image.png") : image_tag(current_user.profile.asset.avatar.url(:thumb)) %></div>
+      <!--z_dp-->
+      <div class="z_dp_nme">
+        <p>
+          <%= current_user.email %></p>
+
+        <div class="z_drop">
+          <span id="z_list1">Account <i class="fa fa-sort-asc ar"></i></span>
+
+          <div style="display:none;" id="z_list2" class="z_open">
+            <i class="fa fa-caret-up arp"></i>
+            <ol class="drop_style">
+              <li><%= link_to "Phone Types", super_admin_phone_types_path %></li>
+              <li><%= link_to "Vehicle Types", super_admin_vehicle_types_path %></li>
+              <li><%= link_to "Edit Password", "/change_password", :class => "my-fancy-box" %></li>
+              <li><%= link_to "Edit Profile Photo", "/super_admin/profiles/profile", :class => "my-fancy-box" %></li>
+              <li><a href="/sign_out">Logout</a></li>
+            </ol>
+          </div>
+          <!--z_open-->
+        </div>
+        <!--z_drop-->
+      </div>
+      <!--z_dp_nme-->
+    </div>
+    <!--z_loged-->
+    <div class="z_tp_rit">
+
+      <!--z_buttons-->
+      <ul class="main_menu" id="menu">
+        <li class="<%= params[:controller].include?('super_admin/packages') ? 'active' : '' %>"><%= link_to "Package Sizes", super_admin_packages_path %></li>
+        <li class="<%= params[:controller].include?('super_admin/payment_methods') ? 'active' : '' %>"><%= link_to "My Cards", super_admin_payment_methods_path %></li>
+        <li class="<%= params[:controller].include?('super_admin/customers') ? 'active' : '' %>"><%= link_to "Customers", super_admin_customers_path %></li>
+        <li class="<%= params[:controller].include?('super_admin/drivers') ? 'active p-r' : 'p-r' %>"><%= link_to "Drivers", super_admin_drivers_path %></li>
+      </ul>
+      <select class="selectnav">
+        <option value="">- Navigation -</option>
+        <option selected="" value="file:///home/rac-laptop/Desktop/Ziply-11-April-9_pgz/index.html">Customers</option>
+        <option value="file:///home/rac-laptop/Desktop/Ziply-11-April-9_pgz/success.html#">Drivers</option>
+      </select><!-- main-menu -->
+      <ul class="smal-nav">
+        <li class="init">Select Page</li>
+        <li><%= link_to "Package Sizes", super_admin_packages_path %></li>
+        <li class="active"><%= link_to "Customers", super_admin_customers_path %></li>
+        <li><%= link_to "Drivers", super_admin_drivers_path %></li>
+
+      </ul>
+      <!--smal-nav-->
+    </div>
+
+
+  </div>
+  <!-- container -->
+</section>
+
+<script type="text/javascript">
+
+    $(".smal-nav").on("click", ".init", function () {
+        $(this).closest(".smal-nav").children('li:not(.init)').slideDown();
+    });
+
+    var allOptions = $(".smal-nav").children('li:not(.init)');
+    $(".smal-nav").on("click", "li:not(.init)", function () {
+        allOptions.removeClass('selected');
+        $(this).addClass('selected');
+        $(".smal-nav").children('.init').html($(this).html());
+        allOptions.slideUp('fast');
+    });
+    $(".smal-nav").click(function (e) {
+        e.stopPropagation();
+    });
+    $(document).click(function () {
+        $(".smal-nav").children('li:not(.init)').slideUp('fast');
+    });
+</script>
+

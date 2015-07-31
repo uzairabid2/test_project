@@ -1,0 +1,232 @@
+<div id="getting_started">
+  <%= render :partial => "home/getting_started" %>
+  <!--z_slider-->
+</div>
+<section id="z_works">
+  <div class="container">
+    <div class="z_w_lft"><img src="/assets/how_it_works.png"></div>
+    <!--z_w_lft-->
+    <div class="z_w_rit">
+      <h1>How does Ziply work?</h1>
+
+      <p>Ziply provides convenient, stress-free same-day delivery of almost any item locally. With a few button-taps, a
+        friendly Ziply driver will be dispatched to your door to shuttle your box or letter straight to its destination.
+        Use your Ziply app to watch your delivery go from your door to the recipient's hands.</p>
+
+      <!--<p>Worried? Just watch it all go down on your app!</p>-->
+    </div>
+    <!--z_w_lft-->
+  </div>
+  <!--container ends-->
+</section>
+<section class="why-bg" id="z_why">
+  <div class="container">
+    <div class="z_w_lftt">
+      <h1>Why choose Ziply?</h1>
+
+      <p>Time is money. Time is also freedom. We're here to save you both. Whether you're sitting on a stack of business
+        shipments or you just need to get something across town on the double, Ziply makes it faster and easier than
+        ever before. No standing in lines, no calling around, no hassle. Let freedom ring.</p>
+
+      <div class="sign_up z_reg_btn"><a href="javascript:void(0)" class="z_orngxbig_btn">Register Today</a></div>
+      <!--z_reg_btn -->
+    </div>
+    <!--z_w_lft-->
+  </div>
+  <!--container-->
+</section>
+
+<section id="z_testimonial" class="testi-bg">
+  <div class="container">
+    <!--<div class="z_clients"><img src="/assets/clients.png"></div>-->
+    <!--z_w_lft-->
+    <div class="z_testi" id="test_container">
+      <div class="testimonial">
+        <div class="z_repet">
+          <div class="z_nme_img">
+            <div class="z_dp_img"><img src="/assets/pic.png"></div>
+            <!--z_dp_img-->
+            <p>Glenn Rush</p>
+            <span>Entrepreneur</span>
+          </div>
+          <!--z_nme_img-->
+          <div class="z_testi_txt">
+            <img src="/assets/inverted.png">
+
+            <p>I'm a small business owner, and Ziply has given my company a competitive advantage. We don't have a
+              retail store, but Ziply has allowed us to get our product into our customers’ hands within hours of their
+              purchase. The feedback has been tremendous. The service is really going to take us to the next level!</p>
+            <img class="f-r" src="/assets/inverted-2.png">
+          </div>
+          <!--z_testi_txt-->
+        </div>
+        <!--z_repet-->
+        <div class="z_repet">
+          <div class="z_nme_img">
+            <div class="z_dp_img"><img src="/assets/tosi.png"></div>
+            <!--z_dp_img-->
+            <p>Simon Walton</p>
+            <span>Producer</span>
+          </div>
+          <!--z_nme_img-->
+          <div class="z_testi_txt">
+            <img src="/assets/inverted.png">
+
+            <p>Being a producer in Hollywood means running all over town picking up and dropping off scripts, screeners,
+              etc. I don’t have an assistant, so that means I have to do it all myself. Ziply has taken that weight off
+              my shoulders, safely and securely delivering and picking up for me … I guess I do have an assistant
+              now!</p>
+            <img class="f-r" src="/assets/inverted-2.png">
+          </div>
+          <!--z_testi_txt-->
+        </div>
+        <!--z_repet-->
+        <div class="z_repet">
+          <div class="z_nme_img">
+            <div class="z_dp_img"><img src="/assets/pic.png"></div>
+            <!--z_dp_img-->
+            <p>Micheal Hussey</p>
+            <span>Entrepreneur</span>
+          </div>
+          <!--z_nme_img-->
+          <div class="z_testi_txt">
+            <img src="/assets/inverted.png">
+
+            <p>One of our customers wanted flowers delivered to the Santa Monica Pier, where he was going to propose to
+              his girlfriend! Our only driver was out on other runs, so we quickly ordered a Ziply driver. It worked out
+              perfectly. Now we use the service for most of our deliveries. Oh yeah — she said yes!</p>
+            <img class="f-r" src="/assets/inverted-2.png">
+          </div>
+          <!--z_testi_txt-->
+        </div>
+        <!--z_repet-->
+      </div>
+      <!--testimonial-->
+    </div>
+    <!--z_testi-->
+    <div class="z_get_started"><a class="sign_up z_orngxbig_btn" href="javascript:void(0);">Get Started for Free</a>
+    </div>
+    <!--z_get_started -->
+  </div>
+  <!--container ends-->
+</section><!--z_testimonial-->
+
+
+<script type="text/javascript"
+        src="//maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
+
+
+<script type="text/javascript">
+    $(".smal-nav").on("click", ".init", function () {
+        $(this).closest(".smal-nav").children('li:not(.init)').slideDown();
+    });
+
+    var allOptions = $(".smal-nav").children('li:not(.init)');
+    $(".smal-nav").on("click", "li:not(.init)", function () {
+        allOptions.removeClass('selected');
+        $(this).addClass('selected');
+        $(".smal-nav").children('.init').html($(this).html());
+        allOptions.slideUp();
+    });
+
+    $("#get_started").click(function () {
+        var pick_location = $("#pick_location").val();
+        var dest_location = $("#dest_location").val();
+        var pick_time = $("#pick_time").val();
+//        var home_cookie_string = "";
+//        if (pick_location != "" && pick_location != undefined) {
+//            home_cookie_string = home_cookie_string + pick_location + "_"
+//        } else {
+//            apprise("Please Enter Pick Location");
+//            return false;
+//        }
+//        if (dest_location != "" && dest_location != undefined) {
+//            home_cookie_string = home_cookie_string + dest_location + "_"
+//        } else {
+//            apprise("Please Enter Destination Location");
+//            return false;
+//        }
+//        if (pick_time != "" && pick_time != undefined) {
+//            home_cookie_string = home_cookie_string + pick_time
+//        } else {
+//            apprise("Please Enter Destination Location");
+//            return false;
+//        }
+//        $.setCookie("home_cookie_string", home_cookie_string);
+//        document.location.href = "/jobs/new?pick_location=" + pick_location + "&dest_location=" + dest_location;
+        document.location.href = "/customer/jobs/new?pick_location=" + pick_location + "&dest_location=" + dest_location + "&pick_time=" + pick_time;
+    })
+
+    var currentdate = new Date();
+    var datetime = currentdate.getFullYear() + "-" + currentdate.getMonth()
+            + "-" + currentdate.getDay() + " "
+            + currentdate.getHours() + ":"
+            + currentdate.getMinutes();
+
+    //    $('#pick_time').datetimepicker({
+    //        format: 'Y-m-d h:m TT',
+    //        hours12: true,
+    //        lang: 'en'
+    //    });
+    //    $('#s_date_icon').click(function () {
+    //        $('#pick_time').datetimepicker('show');
+    //    });
+
+    //    $('#pick_time').timepicker();
+    //    $('#pick_time').datetimepicker({
+    //        timeFormat: "hh:mm tt"
+    //    });
+
+
+    $('#pick_time').datetimepicker({
+//        controlType: 'select',
+        dateFormat: 'm-d-yy',
+        timeFormat: 'hh:mm tt',
+        minDate: new Date(),
+        minTime: Date($.now())
+    });
+
+    //    $('#pick_time').datetimepicker({
+    //        language: 'pt-BR'
+    //    });
+    //    $('pick_time').datepicker();
+
+
+    $("#pick_location").geocomplete({
+        details: "form",
+        //            componentRestrictions: {country: 'UK'},
+        types: ["geocode", "establishment"], select: function (event, ui) {
+            if (ui.item.value != '') {
+                $("#pick_location").trigger("geocode");
+            }
+        }
+    });
+    $("#dest_location").geocomplete({
+        details: "form",
+        //            componentRestrictions: {country: 'UK'},
+        types: ["geocode", "establishment"],
+        select: function (event, ui) {
+            if (ui.item.value != '') {
+                $("#dest_location").trigger("geocode");
+            }
+        }
+    });
+
+    $(".sign_up").click(function () {
+        $("#ajax_loader").show();
+        $(".shadow").show();
+        $.ajax({
+            url: '/sign_up',
+            type: 'get',
+            dataType: 'html',
+            processData: false,
+            success: function (data) {
+                $("#pop_up_div").html(data);
+                $("#ajax_loader").hide();
+                $(".shadow").hide();
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+            }
+        });
+    });
+
+</script>

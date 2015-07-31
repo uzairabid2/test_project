@@ -1,0 +1,44 @@
+<section class="z_content3">
+  <div class="container">
+    <div class="z_msg_hed z_100">
+      <div class="bord"><h2>Customers</h2>
+
+        <div class="z_msg_srch">
+          <label>Search Customer</label>
+          <input id="filter_input" type="text" placeholder="Title or Package ID #">
+        </div>
+        <!--z_msg_srch-->
+      </div>
+      <!--bord-->
+
+      <div id="customer_list">
+        <%= render :partial => "super_admin/customers/list" %>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+    $('#filter_input').autocomplete({
+        minLength: 0,
+        source: function (request, response) {
+            var page_url = "/super_admin/customers/search_customer?term=" + $("#filter_input").val() + "&page=" + 1;
+            $.ajax({
+                url: page_url,
+                type: 'get',
+                dataType: 'html',
+                processData: false,
+                success: function (data) {
+                    $("#customer_list").html(data);
+                    $(".shadow").hide();
+                    $("#ajax_loader").hide();
+                }
+            });
+        },
+        search: function (event, ui) {
+            $("#ajax_loader").show();
+        }
+    });
+</script>
+

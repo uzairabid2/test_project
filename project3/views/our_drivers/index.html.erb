@@ -1,0 +1,60 @@
+
+
+
+
+
+
+<iframe id="miiframe" src="http://54.200.171.213" height="500px;" width="1000px"></iframe>
+<!-- example -->
+<div id="loading" style="position:fixed;background:red;width:100%;height:100%;top:0;left:0;z-index:2;"></div>
+<img id="background" style="position:absolute;width:100%;height:100%;top:0;left:0;z-index:-1;"/>
+
+<script>
+    var loaded = false;
+    console.log(loaded);
+    function preloader(){
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("miiframe").style.display = "block";
+        loaded = true;
+        console.log(loaded);
+        $("#T_footer").hide();
+    }//preloader
+    var loadiframe = document.getElementById('miiframe');
+    loadiframe.onload = preloader;
+
+    if(!loaded){
+        window.onload = function(){
+            background = document.getElementById("background");
+            background.src ="http://www.hdwallpapers.in/walls/cute_baby_in_autumn-wide.jpg";
+        };
+    }
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        alert("dsad");
+
+        $(document.body).addClass('odbg');
+//        var psUrl = 'http://52.10.151.86';
+//        $("#phoneScoreCardDlg").load(psUrl);
+    })
+
+    $(".become_d1").click(function () {
+        $("#ajax_loader").show();
+        $(".shadow").show();
+        $.ajax({
+            url: '/home/become_driver',
+            type: 'get',
+            dataType: 'html',
+            processData: false,
+            success: function (data) {
+                $("#pop_up_div").html(data);
+                $("html, body").animate({ scrollTop: 190 }, "slow");
+                $("#ajax_loader").hide();
+                $(".shadow").hide();
+            }
+        });
+    });
+</script>

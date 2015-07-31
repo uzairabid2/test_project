@@ -1,0 +1,49 @@
+<footer id="z_footer">
+  <div class="container">
+    <div class="z_fot_lft">
+      <ul class="fotLinks">
+        <li><a href="/track-package">TRACK</a></li>
+        <li><a href="/customer/jobs/new">SHIP</a></li>
+        <li><a href="#" class="become_d">BECOME A DRIVER</a></li>
+        <li><a href="#">CITIES</a></li>
+        <li><a href="#">HELP</a></li>
+        <li><a href="#">ABOUT US</a></li>
+      </ul>
+      <div class="z_fot_copyright">
+        <p>© 2014 ZIPLY</p>
+        <ul>
+          <li><a href="#">TERMS</a></li>
+          <li><a href="#">PRIVACY</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="z_fot_rit">
+      <a href="http://instagram.com/goziply"><i class="fa fa-instagram"></i></a>
+      <a href="https://twitter.com/goziply "><i class="fa fa-twitter"></i></a>
+      <a href="http://www.facebook.com/goziply"><i class="fa fa-facebook"></i></a>
+      <a href="http://linkedIn.com/goziply"><i class="fa fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <!--<script type="text/javascript" src="https://whiterabbit.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e/en_US-5a0gqg/6322/17/1.4.11/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=acea43a8"></script>-->
+</footer>
+
+<script type="text/javascript">
+    $(".become_d").click(function () {
+        $("#ajax_loader").show();
+        $(".shadow").show();
+        $.ajax({
+            url: '/home/become_driver',
+            type: 'get',
+            dataType: 'html',
+            processData: false,
+            success: function (data) {
+                $("#pop_up_div").html(data);
+                $("#ajax_loader").hide();
+                $(".shadow").hide();
+                $("html, body").animate({ scrollTop: 100 }, "slow");
+            }
+        });
+    });
+</script>
